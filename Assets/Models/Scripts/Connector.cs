@@ -15,15 +15,15 @@ public class Connector : MonoBehaviour
         Gizmos.color = Color.green;
         Gizmos.DrawLine(center, center + transform.forward);
 
-        Vector3 height = transform.position + transform.up * _size.y;
-        Vector3 width = transform.position + transform.right * halfsize.x;
+        Vector3 top =  transform.up * _size.y;
+        Vector3 side = transform.right * halfsize.x;
 
         // draws the doorway gizmo in center
         Gizmos.color *= 0.75f;
-        Vector3 topLeft = height - width;
-        Vector3 topRight = height + width;
-        Vector3 botLeft = -width;
-        Vector3 botRight = width;
+        Vector3 topLeft = transform.position + top - side;
+        Vector3 topRight = transform.position + top + side;
+        Vector3 botLeft = transform.position -side;
+        Vector3 botRight = transform.position + side;
 
         Gizmos.DrawLine(topLeft, topRight);
         Gizmos.DrawLine(botLeft, botRight);
