@@ -3,7 +3,7 @@ using UnityEngine;
 public class Connector : MonoBehaviour
 {
     [SerializeField] private Vector2 _size = Vector2.one;
-
+    public bool IsConnected { get; set; } = false;
 
 
     private void OnDrawGizmos()
